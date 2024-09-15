@@ -5,7 +5,6 @@
 #
 # You are free to use, modify, and distribute this software under the MPL 2.0 license, with the requirement
 # to disclose any modifications to this file. Other files in the project may remain under different licenses.
-import importlib.util
 import os
 import re
 import subprocess
@@ -42,12 +41,6 @@ def git_pull(path):
     try:
         log_info(f"pulled the latest changes from {path}...")
         subprocess.run(['git', '-C', path, 'pull'], check=True)
-        if importlib.util.find_spec('mizper') is not None:
-            log_info('mizper package has been installed, reinstall...')
-            subprocess.check_call([sys.executable, 'setup.py', 'install'])
-            log_sucs('mizper package was successfully reinstalled')
-        else:
-            log_info('mizper package not installed, run python setup.py install to install package if you needed')
         log_sucs("update successful.")
     except subprocess.CalledProcessError as e:
         log_error(f"failed to attract change: {e}")
@@ -107,7 +100,6 @@ def parse():
     parser.add_argument('--zh-phpsessid', help=SUPPRESS)
 
     args = parser.parse_args()
-    print(importlib.util.find_spec('mizper'))
 
     if args.update:
         project_path = os.getcwd()
