@@ -6,7 +6,6 @@
 # You are free to use, modify, and distribute this software under the MPL 2.0 license, with the requirement
 # to disclose any modifications to this file. Other files in the project may remain under different licenses.
 import os
-import sys
 from datetime import datetime
 
 from cli.argument_parser import parse
