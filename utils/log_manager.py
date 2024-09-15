@@ -23,7 +23,7 @@ LIGHT = Fore.LIGHTWHITE_EX
 
 # Configure logger
 log_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-log_file = 'scraper.log'
+log_file = 'mizper.log'
 log_max_size = 10000000  # 10 MB
 
 file_handler = RotatingFileHandler(log_file, maxBytes=log_max_size, backupCount=5)
