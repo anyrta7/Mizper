@@ -107,6 +107,7 @@ def parse():
     parser.add_argument('--zh-phpsessid', help=SUPPRESS)
 
     args = parser.parse_args()
+    print(importlib.util.find_spec('mizper'))
 
     if args.update:
         project_path = os.getcwd()
