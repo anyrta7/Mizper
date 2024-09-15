@@ -47,7 +47,7 @@ def git_pull(path):
             subprocess.check_call([sys.executable, 'setup.py', 'install'])
             log_sucs('mizper package was successfully reinstalled')
         else:
-            log_info('mizper package not installer, run python setup.py install to install package if you needed')
+            log_info('mizper package not installed, run python setup.py install to install package if you needed')
         log_sucs("update successful.")
     except subprocess.CalledProcessError as e:
         log_error(f"failed to attract change: {e}")
