@@ -2,5 +2,6 @@
 /.cache
 /.idea
 /output
+__pycache__/
 scraper.log
 zone-h.cookie
