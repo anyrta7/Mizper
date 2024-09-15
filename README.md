@@ -1,6 +1,8 @@
 <h1 align="center">Mizper</h1>
 <p align="center">Global Cyber Vandalism Mirror Database Grabber (beta)</p>
 
+> Beta tester version 
+
 ## Overview
 
 Mizper is a Python-based project designed to fetch mirror links from websites like:
