@@ -38,6 +38,6 @@ setup(
     python_requires='>=3.6',
     install_requires=read_file("requirements.txt"),
     entry_points={
-        'console_scripts': ['mizper=cli.main:main']
+        'console_scripts': ['mizper=main:main']
     }
 )
