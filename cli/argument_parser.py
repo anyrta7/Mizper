@@ -5,9 +5,14 @@
 #
 # You are free to use, modify, and distribute this software under the MPL 2.0 license, with the requirement
 # to disclose any modifications to this file. Other files in the project may remain under different licenses.
+import os
 import re
+import subprocess
+import sys
 from argparse import ArgumentParser, SUPPRESS
 from argparse import RawTextHelpFormatter
+
+from utils.log_manager import log_info, log_error
 
 
 def parse_limit(input_str):
@@ -22,6 +27,23 @@ def parse_limit(input_str):
         min_value = max_value = int(input_str)
 
     return min_value, max_value
+
+
+def is_git_repo(path):
+    try:
+        subprocess.run(['git', '-C', path, 'status'], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        return True
+    except subprocess.CalledProcessError:
+        return False
+
+
+def git_pull(path):
+    try:
+        log_info(f"pulled the latest changes from {path}...")
+        subprocess.run(['git', '-C', path, 'pull'], check=True)
+        log_info("update successful.")
+    except subprocess.CalledProcessError as e:
+        log_error(f"failed to attract change: {e}")
 
 
 def get_version_from_setup():
@@ -78,6 +100,12 @@ def parse():
     parser.add_argument('--zh-phpsessid', help=SUPPRESS)
 
     args = parser.parse_args()
+
+    if args.update:
+        project_path = os.getcwd()
+        if is_git_repo(project_path):
+            git_pull(project_path)
+        sys.exit()
 
     selected_site = [option for option in [args.zone_xsec, args.zone_h, args.haxorid] if option]
     if len(selected_site) != 1:

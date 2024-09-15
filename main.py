@@ -6,7 +6,6 @@
 # You are free to use, modify, and distribute this software under the MPL 2.0 license, with the requirement
 # to disclose any modifications to this file. Other files in the project may remain under different licenses.
 import os
-import subprocess
 import sys
 from datetime import datetime
 
@@ -15,24 +14,7 @@ from scraper.haxorid_scraper import HaxorIdScraper
 from scraper.zoneh_scraper import ZoneHScraper
 from scraper.zonexsec_scraper import ZoneXsecScraper
 from utils.cookie_manager import write_cookies, get_cookie
-from utils.log_manager import log_info, log_warn, print_banner, inp, log_error
-
-
-def is_git_repo(path):
-    try:
-        subprocess.run(['git', '-C', path, 'status'], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        return True
-    except subprocess.CalledProcessError:
-        return False
-
-
-def git_pull(path):
-    try:
-        log_info(f"pulled the latest changes from {path}...")
-        subprocess.run(['git', '-C', path, 'pull'], check=True)
-        log_info("update successful.")
-    except subprocess.CalledProcessError as e:
-        log_error(f"failed to attract change: {e}")
+from utils.log_manager import log_info, log_warn, print_banner, inp
 
 
 def main():
@@ -43,12 +25,6 @@ def main():
     section = 'special' if args.special else 'archive' if args.archive else 'onhold' if args.onhold else 'archive' if args.attacker else 'archive'
 
     print_banner()
-
-    if args.update:
-        project_path = os.getcwd()
-        if is_git_repo(project_path):
-            git_pull(project_path)
-        sys.exit()
 
     log_warn('the program is running. stop the program with just CTRL + C')
     print()
