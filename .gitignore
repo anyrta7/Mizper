@@ -1,0 +1,6 @@
+/.venv
+/.cache
+/.idea
+/output
+scraper.log
+zone-h.cookie
