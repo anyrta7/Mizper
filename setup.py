@@ -37,6 +37,7 @@ setup(
     packages=find_packages(),
     python_requires='>=3.6',
     install_requires=read_file("requirements.txt"),
+    py_modules=['main'],
     entry_points={
         'console_scripts': ['mizper=main:main']
     }
