@@ -105,6 +105,9 @@ def parse():
         project_path = os.getcwd()
         if is_git_repo(project_path):
             git_pull(project_path)
+        else:
+            log_error('not a git repository or the git repository of this project was not found, maybe you are not in '
+                      'the root of the project now')
         sys.exit()
 
     selected_site = [option for option in [args.zone_xsec, args.zone_h, args.haxorid] if option]
