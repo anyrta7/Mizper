@@ -30,7 +30,7 @@ def read_file(filename):
 
 setup(
     name='mizper',
-    version='1.0.0#beta',
+    version='0.1.0',
     author='Anyrta7',
     description='(Mirror Scraper) Global Cyber Vandalism Mirror Database Grabber',
     url='https://github.com/anyrta7/Mizper',
