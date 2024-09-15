@@ -1,4 +1,4 @@
-/.venv
+.venv/
 /.cache
 /.idea
 /output
