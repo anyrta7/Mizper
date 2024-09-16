@@ -34,7 +34,7 @@ class ZoneHScraper(Scraper):
         links = []
         soup = BeautifulSoup(html_content, 'html.parser')
         captcha = soup.get_text(separator=' ', strip=True)
-        if 'If you often get this captcha when gathering data' or '-' in captcha:
+        if 'If you often get this captcha when gathering data' in captcha:
             captcha = True
         else:
             captcha = False

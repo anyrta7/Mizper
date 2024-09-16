@@ -1,0 +1,13 @@
+2024-09-17 01:04:52,029 - WARNING - the program is running. stop the program with just CTRL + C
+2024-09-17 01:04:52,029 - INFO - take a list of links from the site: zone-h.org with section page is special
+2024-09-17 01:04:52,029 - INFO - cookies: {'ZHE': 'a046e3d9c6fbd2a93548b50168edb963', 'PHPSESSID': 'u5bgu8ttsb8eahoo5j592sno13'}
+2024-09-17 01:04:52,029 - INFO - starting scraping from page 1 to page 1
+2024-09-17 01:04:52,029 - INFO - please wait, this may take a while depending on the speed of your internet connection
+2024-09-17 01:04:53,347 - ERROR - captcha detected, please visit the site https://zone-h.org then complete the captcha and retrieve the ZHE and PHPSESSID cookies then reset the cookies with the --zh-zhe and --zh-phpsessid options
+2024-09-17 01:04:53,348 - ERROR - scraping failed. no links found
+2024-09-17 01:05:40,138 - WARNING - the program is running. stop the program with just CTRL + C
+2024-09-17 01:05:40,139 - INFO - take a list of links from the site: zone-h.org with section page is special
+2024-09-17 01:05:40,139 - INFO - cookies: {'ZHE': 'a046e3d9c6fbd2a93548b50168edb963', 'PHPSESSID': 'u5bgu8ttsb8eahoo5j592sno13'}
+2024-09-17 01:05:40,139 - INFO - starting scraping from page 1 to page 1
+2024-09-17 01:05:40,139 - INFO - please wait, this may take a while depending on the speed of your internet connection
+2024-09-17 01:05:41,565 - INFO - scraping completed. total links found: 25

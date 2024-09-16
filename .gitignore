@@ -3,5 +3,5 @@
 /.idea
 /output
 __pycache__/
-scraper.log
+mizper.log
 zone-h.cookie
